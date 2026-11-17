@@ -1,0 +1,164 @@
+:root {
+            --bg-color: #1caa9c;
+            --board-bg: #0da192;
+            --cell-bg: #179187;
+            --hover-color: #18dac9;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --x-color: #545454;
+            --o-color: #f2ebd3;
+            --alert-color: #ff5722;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .placar {
+            display: flex;
+            gap: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 10px 30px;
+            border-radius: 15px;
+        }
+
+        .status {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            font-weight: bold;
+            height: 35px;
+        }
+
+        .tabuleiro {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            grid-template-rows: repeat(3, 120px);
+            gap: 10px;
+            background-color: var(--board-bg);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .celula {
+            background-color: var(--cell-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .celula:hover {
+            background-color: var(--hover-color);
+        }
+
+        .celula.x { color: var(--x-color); }
+        .celula.o { color: var(--o-color); }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--bg-color);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .pergunta-texto {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .opcoes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-opcao {
+            background-color: var(--board-bg);
+            color: var(--text-light);
+            border: none;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: left;
+        }
+
+        .btn-opcao:hover {
+            background-color: var(--hover-color);
+        }
+
+        .btn-opcao.correto {
+            background-color: #4CAF50 !important;
+        }
+
+        .btn-opcao.errado {
+            background-color: var(--alert-color) !important;
+        }
+
+        .controles {
+            margin-top: 30px;
+        }
+
+        .btn-reiniciar {
+            background-color: var(--alert-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn-reiniciar:hover {
+            background-color: #e64a19;
+            transform: translateY(-2px);
+        }
